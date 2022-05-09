@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ailopez- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:15:03 by ailopez-          #+#    #+#             */
-/*   Updated: 2022/05/09 18:11:38 by ailopez-         ###   ########.fr       */
+/*   Created: 2022/05/09 17:43:43 by ailopez-          #+#    #+#             */
+/*   Updated: 2022/05/09 18:05:37 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isalpha(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
-}
+
+#ifndef LIBFT_H
+# define LIBFT_H
+
+int	ft_isalpha(int c);
+
+#endif
