@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 17:43:43 by ailopez-          #+#    #+#             */
-/*   Updated: 2022/05/10 18:46:16 by ailopez-         ###   ########.fr       */
+/*   Created: 2022/05/10 18:29:58 by ailopez-          #+#    #+#             */
+/*   Updated: 2022/05/10 19:18:00 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stddef.h>
+#include <stdio.h>
 
-# include <string.h>
+char	*ft_strrchr(const char *s, int c)
+{
+	char	myc;
+	char	*lastc;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-#endif
+	myc = (char)c;
+	lastc = NULL;
+	while (*s != '\0')
+	{
+		if (*s == myc)
+			lastc = (char *)s;
+		s++;
+	}
+	if (myc == '\0')
+		return ((char *)s);
+	return (lastc);
+}
