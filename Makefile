@@ -6,12 +6,14 @@
 #    By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 16:48:38 by ailopez-          #+#    #+#              #
-#    Updated: 2022/05/10 14:03:26 by ailopez-         ###   ########.fr        #
+#    Updated: 2022/05/10 23:49:20 by aitorlope        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= 	libft.a
 
-SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
+SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+				ft_strchr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strlen.c \
+				ft_memset.c ft_bzero.c ft_memcpy.c
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -38,5 +40,5 @@ fclean:	clean
 #Regla  para rehacer todo
 re:		fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: fclean all, all, clean, fclean, re
 
