@@ -6,12 +6,12 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 08:57:28 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/12 09:13:42 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/12 16:52:48 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 

@@ -6,14 +6,14 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:16:47 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/12 09:33:17 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/12 15:21:35 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

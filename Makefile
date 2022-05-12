@@ -6,10 +6,12 @@
 #    By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 16:48:38 by ailopez-          #+#    #+#              #
-#    Updated: 2022/05/12 09:49:52 by aitorlope        ###   ########.fr        #
+#    Updated: 2022/05/12 15:34:06 by ailopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= 	libft.a
+
+loli	= 	${addprefix zdsr,$(NAME)}
 
 SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_strchr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strlen.c \
@@ -17,20 +19,28 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_strlcpy.c ft_strlcat.c ft_strncmp.c ft_calloc.c ft_memchr.c \
 				ft_memcmp.c ft_strnstr.c
 
-OBJS	=	$(SRCS:.c=.o)
+#SRCS_BONUS	=	ft_bonus.c
+
+OBJS		=	$(SRCS:%.c=%.o)
+#OBJS_BONUS	=	$(SRCS_BONUS:%.c=%.o)
 
 CC		=	gcc
 
-CFLGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f
 
+%.o: %.c
+		${CC} ${CFLAGS} -I./ -c $< -o $@
+
 all: ${NAME}
 
-${NAME}:
-
-		${CC} -c ${CFLAGS} ${SRCS} 
+${NAME}:${OBJS} libft.h
 		ar -crs ${NAME} ${OBJS}
+
+#bonus:${NAME} ${OBJS_BONUS}
+#		ar -crs ${NAME} ${OBJS_BONUS}
+#		@touch $@
 
 #Regla para borrar todos los objetos y directorios
 clean:
@@ -39,8 +49,9 @@ clean:
 #Regla para borrar todo lo que ha sido creado or el makefile
 fclean:	clean
 		${RM} ${NAME}
+#		${RM} bonus
 #Regla  para rehacer todo
 re:		fclean all
 
-.PHONY: fclean all, all, clean, fclean, re
+.PHONY: fclean, all, clean, re
 
