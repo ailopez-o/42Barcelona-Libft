@@ -6,7 +6,7 @@
 /*   By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:43:43 by ailopez-          #+#    #+#             */
-/*   Updated: 2022/05/13 12:30:39 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/13 19:08:06 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -39,5 +39,5 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t leni);
 int		ft_atoi(const char *str);
-char 	*ft_substr(char const *s, unsigned int start,size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif
