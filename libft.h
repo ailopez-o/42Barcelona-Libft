@@ -6,7 +6,7 @@
 /*   By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:43:43 by ailopez-          #+#    #+#             */
-/*   Updated: 2022/05/13 19:15:22 by ailopez-         ###   ########.fr       */
+/*   Updated: 2022/05/14 11:21:29 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -41,4 +41,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t leni);
 int		ft_atoi(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 #endif
