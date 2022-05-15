@@ -6,7 +6,7 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:11:02 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/15 18:45:42 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/15 19:35:06 by aitorlope        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,12 +27,12 @@ static	int	ft_numwrds(char const *s, char c)
 	return (numwrd + 2);
 }
 
-char	**ft_free(char **ptr, int num)
+char	**ft_free(char **ptr)
 {
 	int	i;
 
 	i = 0;
-	while (i < num)
+	while (ptr[i])
 	{
 		free(ptr[i]);
 		i++;
@@ -41,17 +41,11 @@ char	**ft_free(char **ptr, int num)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**gosplit(char **ptrtable, const char *s, char c)
 {
-	char	**ptrtable;
-	int		first;
-	int		numwrd;
-	int		lentable;
-
-	lentable = ft_numwrds(s, c);
-	ptrtable = (char **)malloc(lentable * sizeof(char *));
-	if (ptrtable == NULL)
-		return (NULL);
+	int first;	
+	int numwrd;
+	
 	first = 1;
 	numwrd = 0;
 	while (*s)
@@ -65,13 +59,24 @@ char	**ft_split(char const *s, char c)
 			{
 				ptrtable[numwrd] = ft_substr(s, 0, ft_strchr(s, c) - s);
 				if (ptrtable[numwrd] == NULL)
-					return (ft_free(ptrtable, lentable));
+					return (ft_free(ptrtable));
 				numwrd++;
 			}
 		}
-		if (*s)
+		else
 			s++;
 	}
 	ptrtable[numwrd] = NULL;
 	return (ptrtable);
+
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ptrtable;
+
+	ptrtable = (char **)malloc(ft_numwrds(s, c) * sizeof(char *));
+	if (ptrtable == NULL)
+		return (NULL);
+	return (gosplit(ptrtable, s, c));
 }
