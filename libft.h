@@ -6,7 +6,7 @@
 /*   By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:43:43 by ailopez-          #+#    #+#             */
-/*   Updated: 2022/05/15 12:32:55 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/16 14:20:44 by aitorlope        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -43,5 +43,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-
+char	*ft_itoa(int n);
 #endif
