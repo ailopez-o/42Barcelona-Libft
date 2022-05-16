@@ -6,7 +6,7 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:11:02 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/15 19:35:06 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/16 13:23:25 by aitorlope        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,13 +18,15 @@ static	int	ft_numwrds(char const *s, char c)
 
 	i = 0;
 	numwrd = 0;
+	if (*s != c)
+		numwrd ++;
 	while (*(s + i))
 	{
-		if (*(s + i) == c && *(s + i + 1) != c)
+		if (*(s + i) == c && *(s + i + 1) != c && *(s + i + 1))
 			numwrd++;
 		i++;
 	}
-	return (numwrd + 2);
+	return (numwrd + 1);
 }
 
 char	**ft_free(char **ptr)
