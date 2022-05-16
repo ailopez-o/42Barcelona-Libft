@@ -6,22 +6,21 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:20:09 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/16 14:58:23 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/16 15:59:33 by aitorlope        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_itoa(int n)
+int	ft_itoalen(char **s, int n)
 {
-	long	valor;
 	int		len;
-	char	*chrnum;
+	long	valor;
 
-	valor = n;
 	len = 0;
-	while(valor)
+	valor = n;
+	while (valor)
 	{
-		valor = valor/10;
+		valor = valor / 10;
 		len++;
 	}
 	valor = n;
@@ -30,18 +29,30 @@ char *ft_itoa(int n)
 		len++;
 	if (valor == 0)
 		len = 2;
-	chrnum = malloc(len*sizeof(char));
+	*s = malloc(len * sizeof(char));
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	long	valor;
+	int		len;
+	char	*chrnum;
+
+	chrnum = NULL;
+	len = ft_itoalen(&chrnum, n);
 	if (chrnum == NULL)
-		return(NULL);
+		return (NULL);
+	valor = n;
 	if (valor == 0)
 		chrnum[0] = '0';
-	if (valor < 0)		
+	if (valor < 0)
 	{
 		chrnum[0] = '-';
 		valor = -valor;
 	}
 	chrnum[len - 1] = '\0';
-	while(valor)
+	while (valor)
 	{
 		chrnum[len - 2] = (valor % 10) + 48;
 		valor = valor / 10;

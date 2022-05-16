@@ -6,7 +6,7 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:11:02 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/16 13:23:25 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/16 15:47:35 by aitorlope        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -45,9 +45,9 @@ char	**ft_free(char **ptr)
 
 char	**gosplit(char **ptrtable, const char *s, char c)
 {
-	int first;	
-	int numwrd;
-	
+	int	first;	
+	int	numwrd;
+
 	first = 1;
 	numwrd = 0;
 	while (*s)
@@ -70,7 +70,6 @@ char	**gosplit(char **ptrtable, const char *s, char c)
 	}
 	ptrtable[numwrd] = NULL;
 	return (ptrtable);
-
 }
 
 char	**ft_split(char const *s, char c)
