@@ -6,7 +6,7 @@
 #    By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 16:48:38 by ailopez-          #+#    #+#              #
-#    Updated: 2022/05/17 16:51:02 by ailopez-         ###   ########.fr        #
+#    Updated: 2022/05/17 23:37:23 by aitorlope        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= 	libft.a
@@ -23,7 +23,8 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 
 SRCS_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-				ft_lstadd_back.c
+				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+				ft_lstmap.c
 
 OBJS		=	$(SRCS:%.c=%.o)
 OBJS_BONUS	=	$(SRCS_BONUS:%.c=%.o)

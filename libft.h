@@ -6,7 +6,7 @@
 /*   By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:43:43 by ailopez-          #+#    #+#             */
-/*   Updated: 2022/05/17 19:25:59 by ailopez-         ###   ########.fr       */
+/*   Updated: 2022/05/18 00:15:26 by aitorlope        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -18,8 +18,8 @@
 # include <unistd.h>
 
 typedef struct s_list {
-	void	*content;
-	struct	s_list	*next;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
 
 int		ft_isalpha(int c);
@@ -61,4 +61,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif
