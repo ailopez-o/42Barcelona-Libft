@@ -6,12 +6,12 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:50:37 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/17 12:15:43 by ailopez-         ###   ########.fr       */
+/*   Updated: 2022/05/17 12:20:13 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h" 
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;
 
