@@ -6,23 +6,23 @@
 /*   By: aitorlopezdeaudicana <marvin@42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 23:36:12 by aitorlope         #+#    #+#             */
-/*   Updated: 2022/05/18 00:05:32 by aitorlope        ###   ########.fr       */
+/*   Updated: 2022/05/18 10:19:47 by ailopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-
 	t_list	*first;
 	t_list	*new;
 
-	if (!f || !del)
+	if (!f)
 		return (NULL);
 	first = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((*f)(lst->content))))
+		new = ft_lstnew((*f)(lst->content));
+		if (new == NULL)
 		{
 			ft_lstclear(&first, del);
 			lst = NULL;
@@ -32,23 +32,4 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 		lst = lst->next;
 	}
 	return (first);
-	
-/*
-	t_list	*new;
-	t_list 	*newini;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
-		return (NULL);
-
-	while (lst)
-	{
-		new->content = f(lst->content);
-		if (!(new->next = malloc(sizeof(t_list))))
-			ft_lstclear(&newini, del);
-		new = new->next;
-		lst = lst->next;
-	}
-	return (newini);
-*/
 }
