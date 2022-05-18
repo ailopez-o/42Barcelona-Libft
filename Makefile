@@ -6,12 +6,10 @@
 #    By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 16:48:38 by ailopez-          #+#    #+#              #
-#    Updated: 2022/05/17 23:37:23 by aitorlope        ###   ########.fr        #
+#    Updated: 2022/05/18 16:15:48 by ailopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= 	libft.a
-
-loli	= 	${addprefix zdsr,$(NAME)}
 
 SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_strchr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strlen.c \
