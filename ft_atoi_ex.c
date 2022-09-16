@@ -6,10 +6,11 @@
 /*   By: aitoraudicana <marvin@42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 20:28:50 by aitoraudi         #+#    #+#             */
-/*   Updated: 2022/09/09 20:28:54 by aitoraudi        ###   ########.fr       */
+/*   Updated: 2022/09/17 00:03:48 by aitoraudi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "limits.h"
 
 static int	ft_isvalid(char caracter)
 {
@@ -30,9 +31,9 @@ static int	ft_isvalid(char caracter)
 
 int	ft_atoi_ex(const char *str, int *value)
 {
-	int	i;
-	int	neg;
-	int	res;
+	int		i;
+	int		neg;
+	long	res;
 
 	i = 0;
 	neg = 1;
@@ -51,5 +52,7 @@ int	ft_atoi_ex(const char *str, int *value)
 		i++;
 	}
 	*value = res * neg;
+	if ((res * neg) > INT_MAX || (res * neg) < INT_MIN)
+		return (0);
 	return (1);
 }
