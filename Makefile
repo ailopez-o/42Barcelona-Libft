@@ -34,31 +34,51 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f
 
+# Colors
+
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
+
 %.o: %.c
-		${CC} ${CFLAGS} -I./ -c $< -o $@
+		@${CC} ${CFLAGS} -I./ -c $< -o $@
+		@echo "🧱 $(GRAY)${CC} ${CFLAGS} -I./ -c $< -o $@$(DEF_COLOR)"
 
 all: ${NAME}
 
 ${NAME}:${OBJS} libft.h
-		ar -crs ${NAME} ${OBJS}
+		@ar -crs ${NAME} ${OBJS}
+		@echo "$(MAGENTA)Linking ${NAME} lib...$(DEF_COLOR)"
+		@echo "👉 $(CYAN)ar -crs ${NAME} ${OBJS}$(DEF_COLOR)"		
 
 complete: 
 		@$(MAKE) all
 		@$(MAKE) bonus
 
 bonus:${NAME} ${OBJS_BONUS}
-		ar -crs ${NAME} ${OBJS_BONUS}
+		@ar -crs ${NAME} ${OBJS_BONUS}
 		@touch $@
+		@echo "$(MAGENTA)Linking ${NAME} lib...$(DEF_COLOR)"
+		@echo "👉 $(CYAN)ar -crs ${NAME} ${OBJS_BONUS}$(DEF_COLOR)"			
 
 #Regla para borrar todos los objetos y directorios
 clean:
-		${RM} ${OBJS}
+		@${RM} ${OBJS}
+		@echo "$(CYAN) objets cleaned!$(DEF_COLOR)"	
 
 #Regla para borrar todo lo que ha sido creado or el makefile
 fclean:	clean
-		${RM} ${NAME} 
-		${RM} ${OBJS_BONUS}
-		${RM} bonus
+		@${RM} ${NAME} 
+		@${RM} ${OBJS_BONUS}
+		@${RM} bonus
+		@echo "$(CYAN) objets and libft.a cleaned!$(DEF_COLOR)"	
 
 #Regla  para rehacer todo
 re:		fclean all
