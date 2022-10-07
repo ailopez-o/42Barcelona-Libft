@@ -65,26 +65,26 @@ all:
 
 ${NAME}:${OBJS} libft.h Makefile
 		@ar -crs ${NAME} ${OBJS}
-		@echo "\n🚧 $(BOLD_YELLOW)Linking lib...$(DEF_COLOR)"
+		@echo "\n🚧 $(BOLD_YELLOW)Linking ${NAME} lib...$(DEF_COLOR)"
 		@echo "$(CYAN)ar -crs ${NAME} ${OBJS}$(DEF_COLOR)"
 		
 bonus:${NAME} ${OBJS_BONUS} Makefile
 		@ar -crs ${NAME} ${OBJS_BONUS}
 		@touch $@
-		@echo "\n🚧 $(BOLD_YELLOW)Linking bonus...$(DEF_COLOR)"
+		@echo "\n🚧 $(BOLD_YELLOW)Linking ${NAME} bonus...$(DEF_COLOR)"
 		@echo "$(CYAN)ar -crs ${NAME} ${OBJS_BONUS}$(DEF_COLOR)"			
 
 #Regla para borrar todos los objetos y directorios
 clean:
 		@${RM} ${OBJS}
-		@echo "$(MAGENTA) objets cleaned!$(DEF_COLOR)"	
+		@echo "$(MAGENTA) ${NAME} objets cleaned!$(DEF_COLOR)"	
 
 #Regla para borrar todo lo que ha sido creado or el makefile
 fclean:	clean
 		@${RM} ${NAME} 
 		@${RM} ${OBJS_BONUS}
 		@${RM} bonus
-		@echo "$(MAGENTA) objets and libft.a cleaned!$(DEF_COLOR)"	
+		@echo "$(MAGENTA) ${NAME} cleaned!$(DEF_COLOR)"	
 
 #Regla  para rehacer todo
 re:		fclean all
