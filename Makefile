@@ -77,7 +77,7 @@ bonus:${NAME} ${OBJS_BONUS} Makefile
 #Regla para borrar todos los objetos y directorios
 clean:
 		@${RM} ${OBJS}
-		@echo "$(MAGENTA) ${NAME} objets cleaned!$(DEF_COLOR)"	
+		@echo "$(MAGENTA) ${NAME} objet files cleaned!$(DEF_COLOR)"	
 
 #Regla para borrar todo lo que ha sido creado or el makefile
 fclean:	clean
