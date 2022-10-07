@@ -54,37 +54,33 @@ WHITE = \033[0;97m
 
 %.o: %.c
 		@${CC} ${CFLAGS} -I./ -c $< -o $@
-		@echo " 🔧 $(GRAY)${CC} ${CFLAGS} -I./ -c $< -o $@$(DEF_COLOR)"
+		@printf "\r                                                                           "
+		@printf "\r🔧 $(GRAY)${CC} ${CFLAGS} -I./ -c $< -o $@$(DEF_COLOR)"
 
 all: 
-	@echo "\n🎯 $(YELLOW)Starting $(WHITE)[${NAME}] $(YELLOW)compilation..\n$(DEF_COLOR)"
+	@echo "🎯 $(YELLOW)Starting $(WHITE)[${NAME}] $(YELLOW)compilation..$(DEF_COLOR)"
 	@Make ${NAME}
-	@echo "\n"
-	@Make bonus
-	@echo "\n🔰 $(GREEN)Libft done!\n$(DEF_COLOR)"
+	@echo "\n🔰 $(GREEN)${NAME} done!\n$(DEF_COLOR)"
 
-${NAME}:${OBJS} libft.h Makefile
-		@ar -crs ${NAME} ${OBJS}
-		@echo "\n  🚧 $(YELLOW)Linking ${NAME} lib...$(DEF_COLOR)"
-		@echo "$(CYAN)  ar -crs ${NAME} ${OBJS}$(DEF_COLOR)"
+${NAME}:${OBJS} ${OBJS_BONUS} libft.h Makefile
+		@ar -crs ${NAME} ${OBJS} ${OBJS_BONUS}
+		@echo "\n🔗 $(CYAN) ar -crs ${NAME} ${OBJS} ${OBJS_BONUS}$(DEF_COLOR)"
 		
 bonus:${NAME} ${OBJS_BONUS} Makefile
 		@ar -crs ${NAME} ${OBJS_BONUS}
 		@touch $@
-		@echo "\n  🚧 $(YELLOW)Linking ${NAME} bonus...$(DEF_COLOR)"
-		@echo "$(CYAN)  ar -crs ${NAME} ${OBJS_BONUS}$(DEF_COLOR)"			
 
 #Regla para borrar todos los objetos y directorios
 clean:
 		@${RM} ${OBJS}
-		@echo "$(MAGENTA) ${NAME} objet files cleaned!$(DEF_COLOR)"	
+		@${RM} ${OBJS_BONUS}
+		@${RM} bonus		
+		@echo "$(MAGENTA)🚽 Cleaned ${NAME}$(DEF_COLOR)"	
 
 #Regla para borrar todo lo que ha sido creado or el makefile
 fclean:	clean
 		@${RM} ${NAME} 
-		@${RM} ${OBJS_BONUS}
-		@${RM} bonus
-		@echo "$(MAGENTA) ${NAME} cleaned!$(DEF_COLOR)"	
+		@echo "$(MAGENTA)🚽 Fcleaned ${NAME}!$(DEF_COLOR)"	
 
 #Regla  para rehacer todo
 re:		fclean all
