@@ -9,7 +9,7 @@
 #    Updated: 2022/05/18 16:15:48 by ailopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME	= 	libft.a
+NAME	= libft.a
 
 SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_strchr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strlen.c \
@@ -57,22 +57,22 @@ WHITE = \033[0;97m
 		@echo " 🔧 $(GRAY)${CC} ${CFLAGS} -I./ -c $< -o $@$(DEF_COLOR)"
 
 all: 
-	@echo "\n🚧 $(BOLD_YELLOW)Starting compilation..\n$(DEF_COLOR)"
-	Make ${NAME}
+	@echo "\n🚧 $(YELLOW)Starting $(WHITE)[${NAME}] $(YELLOW)compilation..\n$(DEF_COLOR)"
+	@Make ${NAME}
 	@echo "\n"
-	Make bonus
+	@Make bonus
 	@echo "\n🔰 $(GREEN)Libft done!\n$(DEF_COLOR)"
 
 ${NAME}:${OBJS} libft.h Makefile
 		@ar -crs ${NAME} ${OBJS}
-		@echo "\n🚧 $(BOLD_YELLOW)Linking ${NAME} lib...$(DEF_COLOR)"
-		@echo "$(CYAN)ar -crs ${NAME} ${OBJS}$(DEF_COLOR)"
+		@echo "\n  🚧 $(YELLOW)Linking ${NAME} lib...$(DEF_COLOR)"
+		@echo "$(CYAN)  ar -crs ${NAME} ${OBJS}$(DEF_COLOR)"
 		
 bonus:${NAME} ${OBJS_BONUS} Makefile
 		@ar -crs ${NAME} ${OBJS_BONUS}
 		@touch $@
-		@echo "\n🚧 $(BOLD_YELLOW)Linking ${NAME} bonus...$(DEF_COLOR)"
-		@echo "$(CYAN)ar -crs ${NAME} ${OBJS_BONUS}$(DEF_COLOR)"			
+		@echo "\n  🚧 $(YELLOW)Linking ${NAME} bonus...$(DEF_COLOR)"
+		@echo "$(CYAN)  ar -crs ${NAME} ${OBJS_BONUS}$(DEF_COLOR)"			
 
 #Regla para borrar todos los objetos y directorios
 clean:
