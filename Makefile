@@ -57,7 +57,7 @@ WHITE = \033[0;97m
 		@echo " 🔧 $(GRAY)${CC} ${CFLAGS} -I./ -c $< -o $@$(DEF_COLOR)"
 
 all: 
-	@echo "\n🚧 $(YELLOW)Starting $(WHITE)[${NAME}] $(YELLOW)compilation..\n$(DEF_COLOR)"
+	@echo "\n🎯 $(YELLOW)Starting $(WHITE)[${NAME}] $(YELLOW)compilation..\n$(DEF_COLOR)"
 	@Make ${NAME}
 	@echo "\n"
 	@Make bonus
