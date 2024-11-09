@@ -6,7 +6,7 @@
 #    By: ailopez- <ailopez-@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 16:48:38 by ailopez-          #+#    #+#              #
-#    Updated: 2022/05/18 16:15:48 by ailopez-         ###   ########.fr        #
+#    Updated: 2024/11/09 13:32:18 by ailopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME	= libft.a
@@ -59,7 +59,7 @@ WHITE = \033[0;97m
 
 all: 
 	@echo "🎯 $(YELLOW)Starting $(WHITE)[${NAME}] $(YELLOW)compilation..$(DEF_COLOR)"
-	@Make ${NAME}
+	@make ${NAME}
 	@echo "\n🔰 $(GREEN)${NAME} done!\n$(DEF_COLOR)"
 
 ${NAME}:${OBJS} ${OBJS_BONUS} libft.h Makefile
