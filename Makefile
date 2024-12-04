@@ -9,6 +9,7 @@
 #    Updated: 2024/11/09 13:32:18 by ailopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 NAME	= libft.a
 
 SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
